@@ -1,7 +1,7 @@
-<section class="property-binding">
+<!--<section class="property-binding">
     <article>
         <h3>Interpolation / Interpolação</h3>
-        <!--a variavel url foi interpolada do componet ts da classe DataBindingComponent-->
+        <!--a variavel url foi interpolada do componet ts da classe DataBindingComponent
         <p>String renderizada com Interpolação: {{ url }}</p>
         <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
         <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor()}}</p>
@@ -21,5 +21,52 @@
         <p>Usa-se colchetes < img [ src ] = "urlImg" / ></p>
         <p>Formato padrão é através de bind-nomePropriedade < img bind-src="urlImg"/></p>
         <p>Quando não existe uma propriedade no elemento, usa-se [ attr.colspan] </p>
+    </article>
+
+</section>-->
+
+<section>
+    <article>
+        <h3>Class e Style Binding</h3>
+        <p>Especie de data Binding mas aplicado ao CSS</p>
+        <div>
+            Selecione uma classe:
+            <select #classe (change)="0">
+                <option value="alert-success">Sucesso</option>
+                <option value="alert-info">Informação</option>
+                <option value="alert-warning">Alerta</option>
+                <option value="alert-danger">Perigo</option>
+            </select>
+            <br><br>
+            <p>primeira possibilidade:</p>
+            <div class="alert {{ classe.value }}" role="alert">Texto colorido conforme valor do combobox.</div>
+            <br><br>
+            <p>segunda possibilidade:</p>
+            <div class="alert" role="alert" 
+            [class.alert-success]="classe.value == 'alert-success'">
+                A simple success alert—check it out!
+              </div>
+              <div class="alert" role="alert"
+              [class.alert-danger]="classe.value == 'alert-danger'">
+                A simple danger alert—check it out!
+              </div>
+              <div class="alert" role="alert"
+              [class.alert-warning]="classe.value == 'alert-warning'">
+                A simple warning alert—check it out!
+              </div>
+              <div class="alert" role="alert"
+              [class.alert-info]="classe.value == 'alert-info'">
+                A simple info alert—check it out!
+              </div>
+              <br><br>
+              <p>terceira possibilidade:</p>
+              <div class="alert alert-danger" role="alert"
+              [style.display]="classe.value == 'alert-danger' ? 'block': 'none'">
+                Esse texto somente aparece em caso de erro!
+              </div>
+
+
+        </div>
+
     </article>
 </section>
