@@ -1,0 +1,25 @@
+<section class="property-binding">
+    <article>
+        <h3>Interpolation / Interpolação</h3>
+        <!--a variavel url foi interpolada do componet ts da classe DataBindingComponent-->
+        <p>String renderizada com Interpolação: {{ url }}</p>
+        <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
+        <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor()}}</p>
+        <p>Curso de Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>
+    </article>
+    <article>
+        <h3>Property Binding</h3>
+        <p>interpolação</p>
+        <img src="{{ urlImagem }}">
+        <p>com property binding - chamando o metodo ou a variavel</p>
+        <img [src]="urlImagem">
+        <p>por baixo dos panos </p>
+        <img bind-src="urlImagem">
+
+        <p> Property Binding</p>
+        <p>  Valor do Componente para o template</p>
+        <p>Usa-se colchetes < img [ src ] = "urlImg" / ></p>
+        <p>Formato padrão é através de bind-nomePropriedade < img bind-src="urlImg"/></p>
+        <p>Quando não existe uma propriedade no elemento, usa-se [ attr.colspan] </p>
+    </article>
+</section>
